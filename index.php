@@ -349,28 +349,30 @@
 //     </form>    
 // </body>
 // </html>
-?>
+// ? >
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fazendo Upload</title>
-</head>
-<body>
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <label >Selecione uma imagem</label>
-        <input type="file" name="fileToUpload">
-        <br><br>
+// <!-- <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Fazendo Upload</title>
+// </head>
+// <body>
+//     <form action="upload.php" method="POST" enctype="multipart/form-data">
+//         <label >Selecione uma imagem</label>
+//         <input type="file" name="fileToUpload">
+//         <br><br>
        
-        <input type="submit" name="submit" value="Enviar Imagem">
-    </form>    
-</body>
-</html>
+//         <input type="submit" name="submit" value="Enviar Imagem">
+//     </form>    
+// </body>
+// </html> -->
 
-
+if (!defined('PDO::ATTR_DRIVER_NAME')) {
+    echo "POD não disponível. Ative no php.ini";
+}
 
 
 
