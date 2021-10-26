@@ -370,18 +370,196 @@
 // </body>
 // </html> -->
 
-if (!defined('PDO::ATTR_DRIVER_NAME')) {
-    echo "POD não disponível. Ative no php.ini";
-}
+// if (!defined('PDO::ATTR_DRIVER_NAME')) {
+//     echo "POD não disponível. Ative no php.ini";
+// }
+
+// estudo de classes
+// require_once('./classes/Usuario.php');
+
+// $usuario = new Usuario;
+
+// $usuario->nome = "Emerson";
+// $usuario->email = "emersonsm@icloud.com";
+
+// echo $usuario->getNome() . "<br>";
+// echo $usuario->getEmail();
+
+// carregando classe pelo autoload
+
+// use App\Models\Funcionario;
+
+// require_once('vendor/autoload.php');
+
+// $usuario = new Funcionario;
+// $usuario->setSenha('1234');
+
+// echo $usuario->getSenha();
+
+// // pode ser instanciado como abaixo ou usando o use no início do arquivo
+// $usuarioRepository = new \App\Repositories\UsuarioRepository;
+
+// echo $usuario->getNome;
+
+// visibilidade de acessos:
+// public - pode ser acessado de qualquer lugar da aplicação
+// protected - pode ser acessado apenas na classe e em seus filhos
+// private - só pode ser acessado dentro da própria classe
+
+// palavra reservada final indica que o método não pode ser sobescrito pela classe filha
+
+// classes e atributos estaticos - não precisa instanciar
+// use App\Config\Database;
+
+require_once('vendor/autoload.php');
+
+// $tipoConexao = Database::$driver;
+
+// echo $tipoConexao;
+
+// para chamar a funcao estatica
+// Database::staticEcho();
+
+// clonar objeto na memoria
+// $usuario = new \App\Models\Usuario;
+// $funcionario = clone $usuario;
+
+// var_dump($funcionario);
+
+// use App\Controllers\Logger;
+
+// Logger::log("teste de mensagem");
 
 
+// associação
+// class Marido
+// {
+//     public $nome;
+//     public $esposa;
+
+//     public function __construct($nome = null, $esposa = null)
+//     {
+//         $this->nome = $nome;
+//         $this->esposa = $esposa;
+//     }
+// }
+
+// class Esposa
+// {
+//     public $nome;
+
+//     public function __construct($nome = null)
+//     {
+//         $this->nome = $nome;
+//     }
+// }
+
+// $esposa = new Esposa('Cintia');
+// $marido = new Marido('Eu', $esposa);
+// // para saída dos 2 nomes
+// echo $marido->nome . ' e ' . $marido->esposa->nome;
+
+// agregação
+// class Produtos
+// {
+//     public $nome;
+//     public $valor;
+
+//     public function __construct($nome = null, $valor = null)
+//     {
+//         $this->nome = $nome;
+//         $this->valor = $valor;
+//     }
+// }
 
 
+// class CarrinhoCompras
+// {
+//     public $produtos;
+
+//     public function adiciona(Produtos $produto)
+//     {
+//         $this->produtos[] = $produto;
+//     }
+
+//     public function exibe()
+//     {
+//         foreach($this->produtos as $produto)
+//         {
+//             echo $produto->nome;
+//         }
+//     }
+// }
+
+// $produto1 = new Produtos('Play');
+// $produto2 = new Produtos('XBOX');
+
+// $carrinho = new CarrinhoCompras();
+
+// $carrinho->adiciona($produto1);
+// $carrinho->adiciona($produto2);
+// $carrinho->exibe();
+
+// composição
+// class Pessoa
+// {
+//     public function configura($nome)
+//     {
+//         return "Nome: " . $nome;
+//     }
+// }
+
+// class Exibe
+// {
+//     public $pessoa;
+//     public $nome;
+
+//     public function __construct($nome = null)
+//     {
+//         $this->pessoa = new Pessoa();
+//         $this->nome = $nome;
+//     }
+
+//     public function mostrarNome()
+//     {
+//         echo $this->pessoa->configura($this->nome);
+//     }
+// }
+
+// $exibe = new Exibe('Emerson');
+// $exibe->mostrarNome();
+
+// usando a Trait com data atual
+// use App\Controllers\Logger;
+
+// Logger::log('teste');
 
 
+// status 0 - legado
+// status 1 - lambda
+// status 2 - legado e nova arquitetura
 
+// classe anonima
+$usuario = new class() {
+    private $nome;
 
+    public function __construct()
+    {
+        echo "construtor<br>";
+    }
 
+    public function setNome($valor)
+    {
+        $this->nome = $valor;
+    }
 
+    public function getNome()
+    {
+        return $this->nome;
+    }
+};
 
-// aula 4 1:08:40
+$usuario->setNome('Emerson M');
+
+echo $usuario->getNome();
+// Dica de conteúdo: site php the right way

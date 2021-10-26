@@ -1,12 +1,7 @@
 {
-    "name": "emerson/php_bc",
-    "authors": [
-        {
-            "name": "3merso",
-            "email": "emersonsm@icloud.com"
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/"
         }
-    ],
-    "require": {
-        "phpmailer/phpmailer": "^6.5"
     }
 }

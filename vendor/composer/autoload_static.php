@@ -11,6 +11,10 @@ class ComposerStaticInit5376d19fb059f4bfe86007064701ebcd
         array (
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -18,6 +22,18 @@ class ComposerStaticInit5376d19fb059f4bfe86007064701ebcd
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
+        ),
+    );
+
+    public static $classMap = array (
+        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
+        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
+        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
+        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
+        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -25,6 +41,7 @@ class ComposerStaticInit5376d19fb059f4bfe86007064701ebcd
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit5376d19fb059f4bfe86007064701ebcd::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit5376d19fb059f4bfe86007064701ebcd::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5376d19fb059f4bfe86007064701ebcd::$classMap;
 
         }, null, ClassLoader::class);
     }

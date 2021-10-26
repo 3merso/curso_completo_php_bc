@@ -1,0 +1,12 @@
+{
+    "name": "emerson/php_bc",
+    "authors": [
+        {
+            "name": "3merso",
+            "email": "emersonsm@icloud.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
